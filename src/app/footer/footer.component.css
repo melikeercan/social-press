@@ -1,0 +1,9 @@
+span {
+    margin: 30px;
+    flex: 1 1 auto;
+}
+
+button {
+    flex: 1 1 auto;
+    margin: 10px;
+}
