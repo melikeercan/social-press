@@ -1,0 +1,18 @@
+<span>
+    <mat-accordion multi>
+        <mat-expansion-panel hideToggle *ngFor="let content of contentList">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{content.title}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{content.description}}
+                </mat-panel-description>
+                <mat-chip-list>
+                  <mat-chip color="accent" *ngFor="let tag of content.tags">{{tag}}</mat-chip>
+                </mat-chip-list>
+            </mat-expansion-panel-header>
+            <p>{{content.content}}</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</span>

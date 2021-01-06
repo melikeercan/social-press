@@ -5,10 +5,7 @@ mat-drawer-container {
 }
 
 mat-drawer-content {
-    display: flex;
     height: 100%;
-    align-items: center;
-    justify-content: center;
 }
 
 mat-drawer {

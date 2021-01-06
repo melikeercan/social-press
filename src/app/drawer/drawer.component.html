@@ -1,4 +1,8 @@
 <mat-drawer-container>
-    <mat-drawer mode="side" opened="{{show}}" >Drawer content</mat-drawer>
-    <mat-drawer-content>Main content</mat-drawer-content>
+    <mat-drawer mode="side" opened="{{show}}">
+        <app-content-filter></app-content-filter>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-content-list></app-content-list>
+    </mat-drawer-content>
 </mat-drawer-container>

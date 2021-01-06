@@ -1,0 +1,22 @@
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+
+mat-accordion {
+    flex: 1 1 auto;
+}
+
+span {
+    margin: 30px
+}
+
+mat-panel-title {
+    width: 20%;
+}
+
+mat-chip-list {
+    width: 35%;
+    display: flex;
+    justify-content: right;
+}
+
