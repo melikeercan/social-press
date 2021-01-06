@@ -1,7 +1,7 @@
 <div class="mat-toolbar">
-    <app-header></app-header>
+    <app-header (drawerClicked)="toggleDrawer()"></app-header>
 </div>
-<div class="mat-body">
+<div class="mat-body" *ngIf="showDrawer">
     <app-drawer></app-drawer>
 </div>
 <div class="mat-toolbar footer">
