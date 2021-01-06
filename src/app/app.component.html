@@ -2,8 +2,8 @@
     <app-header (drawerClicked)="toggleDrawer()"></app-header>
 </div>
 <div class="mat-body">
-    <app-drawer [show]="showDrawer"></app-drawer>
+    <app-drawer></app-drawer>
 </div>
 <div class="mat-toolbar footer">
-    <app-footer></app-footer>
+    <app-footer [show]="showDrawer"></app-footer>
 </div>
