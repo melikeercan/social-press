@@ -17,6 +17,7 @@ import { DrawerComponent } from './drawer/drawer.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentFilterComponent } from './content-filter/content-filter.component';
+import { InstagramComponent } from './sources/instagram/instagram.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ContentFilterComponent } from './content-filter/content-filter.componen
     DrawerComponent,
     FooterComponent,
     ContentListComponent,
-    ContentFilterComponent
+    ContentFilterComponent,
+    InstagramComponent
   ],
   imports: [
     BrowserModule,
