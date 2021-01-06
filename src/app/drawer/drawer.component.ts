@@ -1,4 +1,4 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-drawer',
@@ -6,6 +6,8 @@ import {Component, OnInit, Output} from '@angular/core';
   styleUrls: ['./drawer.component.css']
 })
 export class DrawerComponent implements OnInit {
+
+  @Input() show: boolean;
 
   showFiller = false;
 
