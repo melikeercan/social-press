@@ -20,3 +20,12 @@ mat-chip-list {
     justify-content: right;
 }
 
+mat-card-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+button {
+    width: 100px;
+    margin: 10px;
+}
