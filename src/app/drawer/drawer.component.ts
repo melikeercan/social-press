@@ -1,5 +1,4 @@
-import {Component, OnInit, Output} from '@angular/core';
-import {EventEmitter} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-drawer',
@@ -8,8 +7,7 @@ import {EventEmitter} from '@angular/core';
 })
 export class DrawerComponent implements OnInit {
 
-  showFiller = false;
-
+  @Input() show: boolean;
 
   constructor() { }
 
