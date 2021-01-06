@@ -18,13 +18,17 @@
                          <mat-grid-tile [colspan]="3" [rowspan]="4">
                             <img mat-card-image src="{{content.image}}" alt="{{content.title}}">
                          </mat-grid-tile>
-                         <mat-grid-tile [colspan]="2" [rowspan]="4">
+                        <mat-grid-tile [colspan]="3" [rowspan]="4">
+                            <youtube-player videoId="PRQCAL_RMVo"></youtube-player>
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="2" [rowspan]="2">
                             <p>{{content.content}}</p>
                          </mat-grid-tile>
                     </mat-card-content>
                     <mat-card-actions>
-                        <mat-grid-tile [colspan]="1" [rowspan]="1">
-                            <button mat-button>LIKE</button>
+                        <mat-grid-tile [colspan]="3" [rowspan]="1">
+                            <button mat-button>REACT</button>
+                            <button mat-button>COMMENT</button>
                             <button mat-button>SHARE</button>
                         </mat-grid-tile>
                     </mat-card-actions>
