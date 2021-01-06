@@ -1,0 +1,12 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+span {
+    margin: 30px;
+    flex: 1 1 auto;
+}
+
+button {
+    margin: 10px;
+}
