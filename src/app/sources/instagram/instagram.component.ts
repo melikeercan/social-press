@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-instagram',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./instagram.component.css']
 })
 export class InstagramComponent implements OnInit {
+
+  instagramUrl: string;
+  instagramUserName: string;
 
   constructor() { }
 

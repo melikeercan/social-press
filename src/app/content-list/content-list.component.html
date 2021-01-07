@@ -15,16 +15,16 @@
             <mat-card>
                 <mat-grid-list cols="5" rowHeight="100">
                     <mat-card-content>
-                         <mat-grid-tile [colspan]="3" [rowspan]="4">
-                            <img mat-card-image src="{{content.image}}" alt="{{content.title}}">
+                        <mat-grid-tile *ngIf="content.image" [colspan]="3" [rowspan]="4" style="background: cornflowerblue">
+                            <app-picture image="{{content.image}}" title="{{content.title}}"></app-picture>
                          </mat-grid-tile>
-                        <mat-grid-tile [colspan]="3" [rowspan]="4">
-                            <youtube-player videoId="PRQCAL_RMVo"></youtube-player>
+                        <mat-grid-tile *ngIf="content.youtubeVideoId" [colspan]="3" [rowspan]="4" style="background: darkseagreen">
+                            <app-youtube videoId="{{content.youtubeVideoId}}"></app-youtube>
                         </mat-grid-tile>
-                        <mat-grid-tile [colspan]="3" [rowspan]="4">
-                            <app-instagram></app-instagram>
+                        <mat-grid-tile *ngIf="content.instagramLink" [colspan]="3" [rowspan]="4" style="background: yellow">
+                            <app-instagram instagramUrl="{{content.instagramLink}}" instagramUserName="{{content.title}}"></app-instagram>
                         </mat-grid-tile>
-                        <mat-grid-tile [colspan]="2" [rowspan]="2">
+                        <mat-grid-tile [colspan]="2" [rowspan]="4" style="background: aqua">
                             <p>{{content.content}}</p>
                          </mat-grid-tile>
                     </mat-card-content>

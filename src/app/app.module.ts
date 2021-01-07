@@ -18,6 +18,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentFilterComponent } from './content-filter/content-filter.component';
 import { InstagramComponent } from './sources/instagram/instagram.component';
+import { YoutubeComponent } from './sources/youtube/youtube.component';
+import { PictureComponent } from './sources/picture/picture.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { InstagramComponent } from './sources/instagram/instagram.component';
     FooterComponent,
     ContentListComponent,
     ContentFilterComponent,
-    InstagramComponent
+    InstagramComponent,
+    YoutubeComponent,
+    PictureComponent
   ],
   imports: [
     BrowserModule,
