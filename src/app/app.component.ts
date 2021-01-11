@@ -6,9 +6,9 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @Input() showDrawer: boolean = true;
+  @Input() showDrawer: boolean;
 
-  toggleDrawer() {
-    this.showDrawer = !this.showDrawer;
-  }
+    toggleDrawer(): void {
+      this.showDrawer = !this.showDrawer;
+    }
 }

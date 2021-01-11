@@ -7,14 +7,19 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  isOpen: boolean;
+
   @Output() drawerClicked = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor() {
+    this.isOpen = false;
+  }
 
   ngOnInit(): void {
   }
 
   onClick(): void {
-    this.drawerClicked.emit()
+    this.isOpen = !this.isOpen;
+    this.drawerClicked.emit(this.isOpen);
   }
 }
