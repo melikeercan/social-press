@@ -6,9 +6,10 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() drawerClicked = new EventEmitter<boolean>();
+  @Output() drawerClicked: EventEmitter<boolean>;
 
   constructor() {
+    this.drawerClicked = new EventEmitter<boolean>();
   }
 
   ngOnInit(): void {
