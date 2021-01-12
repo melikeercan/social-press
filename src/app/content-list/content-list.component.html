@@ -14,15 +14,18 @@
             </mat-expansion-panel-header>
             <mat-card>
                 <mat-grid-list cols="5" rowHeight="100">
-                    <mat-card-content>
-                        <mat-grid-tile *ngIf="content.image" [colspan]="3" [rowspan]="4" style="background: cornflowerblue">
-                            <app-picture image="{{content.image}}" title="{{content.title}}"></app-picture>
-                         </mat-grid-tile>
-                        <mat-grid-tile *ngIf="content.youtubeVideoId" [colspan]="3" [rowspan]="4" style="background: darkseagreen">
-                            <app-youtube videoId="{{content.youtubeVideoId}}"></app-youtube>
-                        </mat-grid-tile>
-                        <mat-grid-tile *ngIf="content.instagramLink" [colspan]="3" [rowspan]="4" style="background: yellow">
-                            <app-instagram instagramUrl="{{content.instagramLink}}" instagramUserName="{{content.title}}"></app-instagram>
+                    <mat-card-content class="container" [ngSwitch]="content.sourceType.valueOf()">
+                        <mat-grid-tile [colspan]="3" [rowspan]="4" style="background: cornflowerblue">
+                             <div *ngSwitchCase="0">
+                                 <app-picture image="{{content.source}}" title="{{content.title}}"></app-picture>
+                             </div>
+                             <div *ngSwitchCase="1">
+                                 <app-youtube videoId="{{content.source}}"></app-youtube>
+                             </div>
+                             <div *ngSwitchCase="2">
+                                 <app-instagram instagramUrl="{{content.source}}" instagramUserName="{{content.title}}"></app-instagram>
+                             </div>
+                            <div *ngSwitchDefault>Undefined source</div>
                         </mat-grid-tile>
                         <mat-grid-tile [colspan]="2" [rowspan]="4" style="background: aqua">
                             <p>{{content.content}}</p>
