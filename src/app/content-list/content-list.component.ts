@@ -23,7 +23,7 @@ export class ContentListComponent implements OnInit {
       title: 'A post shared by DogsOf (@dogsofinstagram)', description: 'Description 1', content: 'Content 1',
       tags: ['Tag11', 'Tag21', 'Tag31'],
       sourceType: ContentType.Image,
-      source: 'https://imgur.com/gallery/vgW1p'
+      source: 'https://i.imgur.com/rpQdRoY.jpg'
     },
     {
       title: 'A post shared by Cat Lovers Club (@catloversclub)', description: 'Description 2', content: 'Content 2',

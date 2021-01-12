@@ -14,8 +14,8 @@
             </mat-expansion-panel-header>
             <mat-card>
                 <mat-grid-list cols="5" rowHeight="100">
-                    <mat-card-content class="container" [ngSwitch]="content.sourceType.valueOf()">
-                        <mat-grid-tile [colspan]="3" [rowspan]="4" style="background: cornflowerblue">
+                    <mat-card-content class="container">
+                        <mat-grid-tile [colspan]="3" [rowspan]="4" style="background: cornflowerblue" [ngSwitch]="content.sourceType.valueOf()">
                              <div *ngSwitchCase="0">
                                  <app-picture image="{{content.source}}" title="{{content.title}}"></app-picture>
                              </div>
