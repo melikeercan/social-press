@@ -20,6 +20,7 @@ import { ContentFilterComponent } from './content-filter/content-filter.componen
 import { InstagramComponent } from './sources/instagram/instagram.component';
 import { YoutubeComponent } from './sources/youtube/youtube.component';
 import { PictureComponent } from './sources/picture/picture.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { PictureComponent } from './sources/picture/picture.component';
     MatChipsModule,
     MatCardModule,
     MatGridListModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
