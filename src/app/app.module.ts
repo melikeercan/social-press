@@ -21,6 +21,7 @@ import { InstagramComponent } from './sources/instagram/instagram.component';
 import { YoutubeComponent } from './sources/youtube/youtube.component';
 import { PictureComponent } from './sources/picture/picture.component';
 import {HttpClientModule} from '@angular/common/http';
+import { SimpleHttpComponent } from './simple-http/simple-http.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {HttpClientModule} from '@angular/common/http';
     ContentFilterComponent,
     InstagramComponent,
     YoutubeComponent,
-    PictureComponent
+    PictureComponent,
+    SimpleHttpComponent
   ],
   imports: [
     BrowserModule,
