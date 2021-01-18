@@ -1,0 +1,16 @@
+<div class="search-bar-container">
+    <mat-form-field appearance="fill">
+        <mat-label>Search content</mat-label>
+        <input matInput placeholder="...search in social media..." [formControl]="search" required>
+        <mat-error *ngIf="search.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <p>
+        Value: {{ search.value }}
+    </p>
+
+    <form (ngSubmit)="onSaveStore()" [formGroup]="storeForm">
+        <div [formGroup]="storeForm.controls.selectedSources">
+            <mat-checkbox *ngFor="let source of sources;" formControlName="{{source}}">{{source}}</mat-checkbox>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+.search-bar-container {
+    border: 1px solid #E91E63;
+    margin: 10px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+input {
+    margin: 0 20px 0 20px;
+    color: black;
+}
+
+mat-label {
+    color: #E91E63;
+}
+
+mat-error {
+    color: #E91E63;
+}
+
+mat-checkbox {
+    color: #E91E63;
+    margin: 10px;
+}
+

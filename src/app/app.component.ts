@@ -7,6 +7,7 @@ import {Component, Input} from '@angular/core';
 })
 export class AppComponent {
   @Input() showDrawer: boolean;
+  title: 'social-press';
 
     toggleDrawer(): void {
       this.showDrawer = !this.showDrawer;

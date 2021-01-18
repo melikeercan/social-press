@@ -1,5 +1,8 @@
-.footer {
-    position: fixed;
-    bottom: 0;
+app-header {
     width: 100%;
+}
+
+.main {
+    display: block;
+    overflow: auto;
 }
