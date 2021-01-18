@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import {SearchService} from '../../services/search.service';
 
 @Component({
     selector: 'app-search-bar',
@@ -17,7 +18,7 @@ export class SearchBarComponent implements OnInit {
 
     filteredOptions: Observable<string[]>;
 
-    constructor(private formBuilder: FormBuilder) {}
+    constructor(private formBuilder: FormBuilder, private searchService: SearchService) {}
 
     ngOnInit(): void {
         this.initForm();
@@ -54,6 +55,7 @@ export class SearchBarComponent implements OnInit {
         console.log('clicked');
         console.log(this.storeForm.controls.searchText.value);
         console.log(this.storeForm.controls.selectedSources.value);
+        this.searchService.makeRequest(this.storeForm.controls.searchText.value, this.storeForm.controls.selectedSources.value);
     }
 
     displayFn(content: string): string {

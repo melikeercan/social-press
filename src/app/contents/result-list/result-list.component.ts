@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SearchService} from '../../services/search.service';
 
 @Component({
   selector: 'app-result-list',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result-list.component.css']
 })
 export class ResultListComponent implements OnInit {
+  data;
 
-  constructor() { }
+  constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
+    this.searchService.data.subscribe(data => {
+      console.log(data);
+      this.data = data.title ? data.title : '';
+    });
   }
 
 }
