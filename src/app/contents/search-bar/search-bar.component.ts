@@ -10,6 +10,7 @@ export class SearchBarComponent implements OnInit {
   storeForm: FormGroup;
   sources: Array<string>;
   searchInput = '';
+  searchText: FormControl = new FormControl(this.searchInput, Validators.required);
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -22,7 +23,7 @@ export class SearchBarComponent implements OnInit {
 
   initForm(): void {
     this.storeForm = this.formBuilder.group({
-      searchText: new FormControl(this.searchInput, Validators.required),
+      searchText: this.searchText,
       selectedSources: this.getSelectedSources()
     });
   }
