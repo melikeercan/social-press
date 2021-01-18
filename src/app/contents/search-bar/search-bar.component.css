@@ -25,3 +25,6 @@ mat-checkbox {
     margin: 10px;
 }
 
+mat-divider {
+    border-top-color: #E91E63;
+}

@@ -7,10 +7,9 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
-  search = new FormControl('', [Validators.required]);
-
   storeForm: FormGroup;
   sources: Array<string>;
+  searchInput = '';
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -23,7 +22,7 @@ export class SearchBarComponent implements OnInit {
 
   initForm(): void {
     this.storeForm = this.formBuilder.group({
-      name: '',
+      searchText: new FormControl(this.searchInput, Validators.required),
       selectedSources: this.getSelectedSources()
     });
   }
@@ -31,16 +30,18 @@ export class SearchBarComponent implements OnInit {
   getSelectedSources(): FormGroup {
     return this.formBuilder.group({
       Instagram: true,
-      Twitter: false,
+      Twitter: true,
       Youtube: true
     });
   }
 
   getErrorMessage(): string {
-    return this.search.hasError('required') ? 'You must enter a value' : '';
+    return this.storeForm.controls.searchText.hasError('required') ? 'You must enter a value' : '';
   }
 
   onSaveStore(): void {
     console.log('clicked');
+    console.log(this.storeForm.controls.searchText.value);
+    console.log(this.storeForm.controls.selectedSources.value);
   }
 }
