@@ -1,5 +1,5 @@
 <div class="search-bar-container">
-    <form (ngSubmit)="onSaveStore()" [formGroup]="storeForm">
+    <form (ngSubmit)="onSearch()" [formGroup]="storeForm">
         <mat-form-field appearance="fill">
             <div [formGroup]="storeForm.controls.selectedSources">
                 <mat-checkbox id="{{source}}"  class="form-control" *ngFor="let source of sources;" formControlName="{{source}}">{{source}}</mat-checkbox>
@@ -7,7 +7,7 @@
             <mat-label>Search content</mat-label>
             <input matInput id="searchText" [matAutocomplete]="auto" class="form-control" formControlName="searchText"  placeholder="...search in social media..." >
             <mat-error *ngIf="storeForm.controls.searchText.invalid">{{getErrorMessage()}}</mat-error>
-            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="printSelection($event)">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onSearch()">
                 <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                     {{option}}
                 </mat-option>

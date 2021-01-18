@@ -19,8 +19,7 @@ export class SearchBarComponent implements OnInit {
 
     filteredOptions: Observable<string[]>;
 
-    constructor(private formBuilder: FormBuilder) {
-    }
+    constructor(private formBuilder: FormBuilder) {}
 
     ngOnInit(): void {
         this.initForm();
@@ -28,11 +27,10 @@ export class SearchBarComponent implements OnInit {
         // this is useful to iterate over the form group
         this.sources = Object.keys(this.storeForm.controls.selectedSources.value);
 
-        this.filteredOptions = this.searchText.valueChanges
-            .pipe(
-                startWith(''),
-                map(title => title ? this._filter(title) : this.options.slice())
-            );
+        this.filteredOptions = this.searchText.valueChanges.pipe(
+            startWith(''),
+            map(title => title ? this._filter(title) : this.options.slice())
+        );
     }
 
     initForm(): void {
@@ -54,7 +52,7 @@ export class SearchBarComponent implements OnInit {
         return this.storeForm.controls.searchText.hasError('required') ? 'You must enter a value' : '';
     }
 
-    onSaveStore(): void {
+    onSearch(): void {
         console.log('clicked');
         console.log(this.storeForm.controls.searchText.value);
         console.log(this.storeForm.controls.selectedSources.value);
@@ -66,13 +64,6 @@ export class SearchBarComponent implements OnInit {
 
     private _filter(title: string): string[] {
         const filterValue = title.toLowerCase();
-
         return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
     }
-
-  printSelection(event: MatAutocompleteSelectedEvent): void {
-    console.log(event.option.value);
-    console.log(this.storeForm.controls.searchText.value);
-    console.log(this.storeForm.controls.selectedSources.value);
-  }
 }
