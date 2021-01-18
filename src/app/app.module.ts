@@ -11,6 +11,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {YouTubePlayerModule} from '@angular/youtube-player';
@@ -51,6 +52,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatButtonModule,
     MatSidenavModule,
     MatExpansionModule,
+    MatAutocompleteModule,
     MatChipsModule,
     MatCardModule,
     MatDividerModule,
