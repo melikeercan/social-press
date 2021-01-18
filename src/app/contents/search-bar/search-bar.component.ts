@@ -3,9 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-
 import {Content} from '../../models/content.model';
-import {ContentType} from '../../models/content-type';
 
 @Component({
     selector: 'app-search-bar',
@@ -15,8 +13,7 @@ import {ContentType} from '../../models/content-type';
 export class SearchBarComponent implements OnInit {
     storeForm: FormGroup;
     sources: Array<string>;
-    searchInput = '';
-    searchText: FormControl = new FormControl(this.searchInput, Validators.required);
+    searchText: FormControl = new FormControl('', Validators.required);
 
     options: string[] = ['Title 1', 'Title 2', 'Title 3'];
 
@@ -63,8 +60,8 @@ export class SearchBarComponent implements OnInit {
         console.log(this.storeForm.controls.selectedSources.value);
     }
 
-    displayFn(content: Content): string {
-        return content && content.title ? content.title : '';
+    displayFn(content: string): string {
+        return content ? content : '';
     }
 
     private _filter(title: string): string[] {
