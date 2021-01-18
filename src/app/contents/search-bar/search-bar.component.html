@@ -7,9 +7,9 @@
             <mat-label>Search content</mat-label>
             <input matInput id="searchText" [matAutocomplete]="auto" class="form-control" formControlName="searchText"  placeholder="...search in social media..." >
             <mat-error *ngIf="storeForm.controls.searchText.invalid">{{getErrorMessage()}}</mat-error>
-            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="printSelection($event)">
                 <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                    {{option.title}}
+                    {{option}}
                 </mat-option>
             </mat-autocomplete>
             <mat-divider></mat-divider>
