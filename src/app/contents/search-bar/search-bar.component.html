@@ -2,12 +2,13 @@
     <form (ngSubmit)="onSaveStore()" [formGroup]="storeForm">
         <mat-form-field appearance="fill">
             <mat-label>Search content</mat-label>
-            <input matInput id="searchText" class="form-control" formControlName="searchText"  placeholder="...search in social media..." required >
+            <input matInput id="searchText" class="form-control" formControlName="searchText"  placeholder="...search in social media..." >
             <mat-error *ngIf="storeForm.controls.searchText.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
         <mat-divider></mat-divider>
+        <mat-label>Select sources</mat-label>
         <div [formGroup]="storeForm.controls.selectedSources">
-            <mat-checkbox *ngFor="let source of sources;" formControlName="{{source}}">{{source}}</mat-checkbox>
+            <mat-checkbox id="{{source}}"  class="form-control" *ngFor="let source of sources;" formControlName="{{source}}">{{source}}</mat-checkbox>
         </div>
     </form>
 </div>
