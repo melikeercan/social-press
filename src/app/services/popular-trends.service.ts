@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {RestResponse} from '../models/RestResponse';
 import {Trends} from '../models/Trends';
-import {TwitterResponse} from '../models/TwitterResponse';
+import {HashtagRestResponse} from '../models/HashtagRestResponse';
 
 const base = 'http://localhost:8080/api/v0/trends/twitter/';
 
@@ -19,11 +18,11 @@ export class PopularTrendsService {
   constructor(private http: HttpClient) { }
 
     fetchPopularTrends(): Promise<Trends[] | void> {
-      return this.http.get<RestResponse>(base).toPromise().then(response => {
+      return this.http.get<HashtagRestResponse>(base).toPromise().then(response => {
           console.log('fetchPopularTrends');
           console.log(response);
           console.log(response.content);
-          return !(response.content instanceof TwitterResponse) ? response.content.trendList : [];
+          return response.content.trendList;
       });
     }
 }
