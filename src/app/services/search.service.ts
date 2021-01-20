@@ -1,11 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Sources} from '../models/sources';
 import {HttpClient} from '@angular/common/http';
-import {Subject} from "rxjs";
-import needle from 'needle';
-import {TwitterResource} from "../models/TwitterResource";
-import {RestResponse} from "../models/RestResponse";
-import {TwitterResponse} from "../models/TwitterResponse";
+import {Subject} from 'rxjs';
+import {RestResponse} from '../models/RestResponse';
 
 @Injectable({
     providedIn: 'root'
@@ -32,5 +29,4 @@ export class SearchService {
                 this.loading = false;
             });
     }
-
 }
