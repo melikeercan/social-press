@@ -14,7 +14,7 @@ export class SearchBarComponent implements OnInit {
     sources: Array<string>;
     searchText: FormControl = new FormControl('', Validators.required);
 
-    options: string[] = ['Title 1', 'Title 2', 'Title 3'];
+    options: string[] = ['JoeBiden', 'Trump', 'Inauguration'];
 
     filteredOptions: Observable<string[]>;
 

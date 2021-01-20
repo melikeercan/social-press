@@ -5,6 +5,7 @@ import {Subject} from "rxjs";
 import needle from 'needle';
 import {TwitterResource} from "../models/TwitterResource";
 import {RestResponse} from "../models/RestResponse";
+import {TwitterResponse} from "../models/TwitterResponse";
 
 @Injectable({
     providedIn: 'root'
@@ -27,7 +28,7 @@ export class SearchService {
         this.http.get<RestResponse>(url)
             .subscribe(result => {
                 console.log(result);
-                this.data.next(result.content.html);
+                this.data.next(result.content.tweetIds);
                 this.loading = false;
             });
     }

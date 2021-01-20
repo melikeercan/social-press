@@ -24,6 +24,7 @@
     "@angular/youtube-player": "^11.0.3",
     "got": "^11.8.1",
     "needle": "^2.6.0",
+    "ngx-tweet": "^2.0.3",
     "npm": "^6.14.10",
     "oauth-1.0a": "^2.2.6",
     "rxjs": "~6.6.0",

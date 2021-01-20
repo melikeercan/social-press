@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
@@ -28,6 +29,7 @@ import { PopularComponent } from './contents/popular/popular.component';
 import { SearchBarComponent } from './contents/search-bar/search-bar.component';
 import { ResultListComponent } from './contents/result-list/result-list.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NgxTweetModule } from 'ngx-tweet';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ResultListComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -61,7 +64,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     YouTubePlayerModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxTweetModule
   ],
   providers: [],
   bootstrap: [AppComponent]
