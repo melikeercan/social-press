@@ -15,7 +15,6 @@ export class TrendsComponent implements OnInit {
 
   ngOnInit(): void {
     this.popularTrendsService.fetchPopularTrends().then(result => {
-      console.log(result);
       if (result) {
         this.trends = result;
       } else {
@@ -25,7 +24,6 @@ export class TrendsComponent implements OnInit {
   }
 
   selectTrend(trend: string): void {
-    console.log(trend);
     this.searchService.makeRequest(trend);
   }
 }

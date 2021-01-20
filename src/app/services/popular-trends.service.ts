@@ -13,15 +13,10 @@ interface PopularHashtagsResponse {
   providedIn: 'root'
 })
 export class PopularTrendsService {
-  selectedHashtag: string;
-
   constructor(private http: HttpClient) { }
 
     fetchPopularTrends(): Promise<Trends[] | void> {
       return this.http.get<HashtagRestResponse>(base).toPromise().then(response => {
-          console.log('fetchPopularTrends');
-          console.log(response);
-          console.log(response.content);
           return response.content.trendList;
       });
     }

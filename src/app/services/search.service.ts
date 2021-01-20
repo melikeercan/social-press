@@ -16,14 +16,10 @@ export class SearchService {
     constructor(private http: HttpClient) { }
 
     makeRequest = (searchText: string) => {
-        console.log(searchText);
         const url = base + searchText;
-        console.log(url);
         this.loading = true;
         this.http.get<SearchRestResponse>(url)
             .subscribe(result => {
-                console.log('makeRequest');
-                console.log(result);
                 this.data.next(result.content.tweetIds);
                 this.loading = false;
             });
