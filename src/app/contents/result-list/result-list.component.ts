@@ -8,12 +8,12 @@ import {SearchService} from '../../services/search.service';
 })
 export class ResultListComponent implements OnInit {
   data;
-  isLoading: boolean;
+  isLoading = false;
 
   constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
-    this.isLoading = true;
+    this.isLoading = false;
     this.searchService.data.subscribe(data => {
       this.data = data ? data : [];
       this.isLoading = false;
