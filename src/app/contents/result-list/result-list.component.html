@@ -1,6 +1,6 @@
-<p>result-list works!</p>
-<ngx-tweet tweetId="921670221710032896"></ngx-tweet>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
 <li *ngFor="let id of data">
     <div>id is: {{id}}</div>
     <ngx-tweet tweetId="{{id}}"></ngx-tweet>
 </li>
+

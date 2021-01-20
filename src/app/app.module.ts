@@ -14,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {YouTubePlayerModule} from '@angular/youtube-player';
 import {HttpClientModule} from '@angular/common/http';
@@ -60,6 +61,7 @@ import { NgxTweetModule } from 'ngx-tweet';
     MatCardModule,
     MatDividerModule,
     MatGridListModule,
+    MatProgressSpinnerModule,
     MatTabsModule,
     YouTubePlayerModule,
     HttpClientModule,

@@ -18,9 +18,7 @@ export class SearchService {
         console.log(searchText);
         console.log(sources);
         const url = 'http://localhost:8080/api/v0/search/twitter/text=' + searchText;
-        const tur = 'https://publish.twitter.com/oembed?url=https://twitter.com/Interior/status/463440424141459456';
         console.log(url);
-        console.log(tur);
         this.loading = true;
         this.http.get<RestResponse>(url)
             .subscribe(result => {
