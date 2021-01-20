@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {SearchService} from '../../services/search.service';
 
 @Component({
@@ -14,8 +14,10 @@ export class ResultListComponent implements OnInit {
   ngOnInit(): void {
     this.searchService.data.subscribe(data => {
       console.log(data);
-      this.data = data.title ? data.title : '';
+      this.data = data ? data : '';
     });
   }
+
+
 
 }
