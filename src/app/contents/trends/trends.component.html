@@ -1,4 +1,4 @@
 <p>trends works!</p>
 <mat-chip-list aria-label="Fish selection" *ngFor="let trend of trends">
-    <mat-chip color="primary" selected>{{trend.name}}</mat-chip>
+    <mat-chip color="primary" selected (click)="selectTrend(trend.name)">{{trend.name}}</mat-chip>
 </mat-chip-list>

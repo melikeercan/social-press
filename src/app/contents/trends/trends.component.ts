@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PopularTrendsService} from '../../services/popular-trends.service';
 import {Trends} from '../../models/Trends';
+import {SearchService} from "../../services/search.service";
 
 @Component({
   selector: 'app-trends',
@@ -10,7 +11,7 @@ import {Trends} from '../../models/Trends';
 export class TrendsComponent implements OnInit {
 
   trends: Trends[];
-  constructor(private popularTrendsService: PopularTrendsService) { }
+  constructor(private popularTrendsService: PopularTrendsService, private searchService: SearchService) { }
 
   ngOnInit(): void {
     this.popularTrendsService.fetchPopularTrends().then(result => {
@@ -23,4 +24,8 @@ export class TrendsComponent implements OnInit {
     });
   }
 
+  selectTrend(trend: string): void {
+    console.log(trend);
+    this.searchService.makeRequest(trend);
+  }
 }

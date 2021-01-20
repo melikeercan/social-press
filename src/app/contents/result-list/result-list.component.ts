@@ -15,6 +15,7 @@ export class ResultListComponent implements OnInit {
   ngOnInit(): void {
     this.isLoading = true;
     this.searchService.data.subscribe(data => {
+      console.log('subscribed');
       console.log(data);
       this.data = data ? data : [];
       this.isLoading = false;

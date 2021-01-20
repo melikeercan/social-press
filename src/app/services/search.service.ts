@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
 import {RestResponse} from '../models/RestResponse';
 import {TwitterResponse} from '../models/TwitterResponse';
+import {PopularHashtagsResponse} from "../models/PopularHashtagsResponse";
 
 const base = 'http://localhost:8080/api/v0/search/twitter/text=';
 
@@ -17,16 +18,18 @@ export class SearchService {
 
     constructor(private http: HttpClient) { }
 
-    makeRequest = (searchText: string, sources: Sources) => {
+    makeRequest = (searchText: string) => {
         console.log(searchText);
-        console.log(sources);
         const url = base + searchText;
         console.log(url);
         this.loading = true;
         this.http.get<RestResponse>(url)
             .subscribe(result => {
+                console.log('makeRequest');
                 console.log(result);
-                if (result.content instanceof TwitterResponse) {
+                if (!result.content.hasOwnProperty('trendList')) {
+                    console.log('tweetIds');
+                    console.log(result.content.tweetIds);
                     this.data.next(result.content.tweetIds);
                 }
                 this.loading = false;

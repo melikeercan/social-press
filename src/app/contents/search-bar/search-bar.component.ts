@@ -57,7 +57,7 @@ export class SearchBarComponent implements OnInit {
         console.log('clicked');
         console.log(this.storeForm.controls.searchText.value);
         console.log(this.storeForm.controls.selectedSources.value);
-        this.searchService.makeRequest(this.storeForm.controls.searchText.value, this.storeForm.controls.selectedSources.value);
+        this.searchService.makeRequest(this.storeForm.controls.searchText.value);
     }
 
     displayFn(content: string): string {

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {RestResponse} from '../models/RestResponse';
 import {Trends} from '../models/Trends';
@@ -15,8 +14,7 @@ interface PopularHashtagsResponse {
   providedIn: 'root'
 })
 export class PopularTrendsService {
-
-  popularHashtags = new Subject<PopularHashtagsResponse>();
+  selectedHashtag: string;
 
   constructor(private http: HttpClient) { }
 
