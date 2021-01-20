@@ -3,6 +3,8 @@ import {Sources} from '../models/sources';
 import {HttpClient} from '@angular/common/http';
 import {Subject} from "rxjs";
 import needle from 'needle';
+import {TwitterResource} from "../models/TwitterResource";
+import {RestResponse} from "../models/RestResponse";
 
 @Injectable({
     providedIn: 'root'
@@ -22,7 +24,7 @@ export class SearchService {
         console.log(url);
         console.log(tur);
         this.loading = true;
-        this.http.get(url)
+        this.http.get<RestResponse>(url)
             .subscribe(result => {
                 console.log(result);
                 this.data.next(result.content.html);
