@@ -1,30 +1,31 @@
 import { Injectable } from '@angular/core';
 import {Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {Sources} from '../models/sources';
 import {RestResponse} from '../models/RestResponse';
-import {PopularHashtagsResponse, Trends} from '../models/PopularHashtagsResponse';
+import {Trends} from '../models/Trends';
+import {TwitterResponse} from '../models/TwitterResponse';
 
-const base = 'http://localhost:8080/api/v0/popular';
+const base = 'http://localhost:8080/api/v0/trends/twitter/';
+
+interface PopularHashtagsResponse {
+    trendList: Trends[];
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class PopularTrendsService {
 
-  popularHashtags = new Subject<object>();
+  popularHashtags = new Subject<PopularHashtagsResponse>();
 
   constructor(private http: HttpClient) { }
 
-  makeRequest = (sources: Sources) => {
-    console.log(sources);
-    this.http.get<RestResponse>(base)
-        .subscribe(result => {
-          console.log(result);
-          if (result.content instanceof PopularHashtagsResponse) {
-            this.popularHashtags.next(result.content.trends);
-          }
-
-        });
-  }
+    fetchPopularTrends(): Promise<Trends[] | void> {
+      return this.http.get<RestResponse>(base).toPromise().then(response => {
+          console.log('fetchPopularTrends');
+          console.log(response);
+          console.log(response.content);
+          return !(response.content instanceof TwitterResponse) ? response.content.trendList : [];
+      });
+    }
 }

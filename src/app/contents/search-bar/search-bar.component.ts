@@ -10,6 +10,7 @@ import {SearchService} from '../../services/search.service';
     styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
+    trends: Array<string>;
     storeForm: FormGroup;
     sources: Array<string>;
     searchText: FormControl = new FormControl('', Validators.required);
@@ -18,7 +19,8 @@ export class SearchBarComponent implements OnInit {
 
     filteredOptions: Observable<string[]>;
 
-    constructor(private formBuilder: FormBuilder, private searchService: SearchService) {}
+    constructor(private formBuilder: FormBuilder,
+                private searchService: SearchService) {}
 
     ngOnInit(): void {
         this.initForm();
