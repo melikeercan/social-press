@@ -32,6 +32,7 @@ import { ResultListComponent } from './contents/result-list/result-list.componen
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgxTweetModule } from 'ngx-tweet';
 import { TrendsComponent } from './contents/trends/trends.component';
+import { YoutubeTrendsComponent } from './contents/youtube-trends/youtube-trends.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { TrendsComponent } from './contents/trends/trends.component';
     SearchBarComponent,
     ResultListComponent,
     TrendsComponent,
+    YoutubeTrendsComponent,
   ],
   imports: [
     CommonModule,
