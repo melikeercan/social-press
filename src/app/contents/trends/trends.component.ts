@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PopularTrendsService} from '../../services/popular-trends.service';
 import {Trends} from '../../models/Trends';
-import {SearchService} from "../../services/search.service";
+import {SearchService} from '../../services/search.service';
 
 @Component({
   selector: 'app-trends',
