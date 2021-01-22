@@ -7,17 +7,22 @@ import {SearchService} from '../../services/search.service';
   styleUrls: ['./result-list.component.css']
 })
 export class ResultListComponent implements OnInit {
-  data;
+  twitterPopularResults;
+  selectedId;
   isLoading = false;
 
   constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
     this.isLoading = false;
-    this.searchService.data.subscribe(data => {
-      this.data = data ? data : [];
+    this.searchService.selectedId.subscribe(value => {
+      this.selectedId = value;
+    });
+    this.searchService.twitterData.subscribe(data => {
+      this.twitterPopularResults = data ? data : [];
       this.isLoading = false;
     });
+
   }
 
 

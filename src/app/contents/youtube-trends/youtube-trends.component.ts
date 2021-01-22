@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {YoutubeTrends} from "../../models/YoutubeTrends";
-import {PopularTrendsService} from "../../services/popular-trends.service";
-import {SearchService} from "../../services/search.service";
+import {YoutubeTrends} from '../../models/YoutubeTrends';
+import {PopularTrendsService} from '../../services/popular-trends.service';
+import {SearchService} from '../../services/search.service';
 
 let apiLoaded = false;
 
@@ -34,11 +34,8 @@ export class YoutubeTrendsComponent implements OnInit {
     }
   }
 
-  selectTrend(trend: string): void {
-    if (trend.charAt(0) === '#') {
-      trend = trend.substr(1);
-    }
-    this.searchService.searchTwitterHashtags(trend);
+  selectTrend(videoId: string): void {
+    this.searchService.searchRelatedYoutubeVideos(videoId);
   }
 
 }
