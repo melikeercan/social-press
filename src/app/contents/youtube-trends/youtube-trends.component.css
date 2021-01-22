@@ -1,3 +1,10 @@
-mat-chip-list {
-    margin-bottom: 20px;
+.mat-chip-list-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 4px;
+}
+
+.chips{
+    width: 640px;
+    justify-content: center;
 }
