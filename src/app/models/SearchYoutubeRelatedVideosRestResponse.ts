@@ -1,10 +1,10 @@
 import {RestResponse} from './RestResponse';
+import {YoutubeResultsResponse} from './YoutubeResultsResponse';
 
 export class SearchYoutubeRelatedVideosRestResponse extends RestResponse {
-    // TODO fix type
-    public content: any;
+    public content: YoutubeResultsResponse;
 
-    constructor(status: string, message: string, timestamp: string, content: any) {
+    constructor(status: string, message: string, timestamp: string, content: YoutubeResultsResponse) {
         super(status, message, timestamp);
         this.content = content;
     }

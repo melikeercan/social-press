@@ -5,7 +5,7 @@ import {SearchTwitterHashtagsRestResponse} from '../models/SearchTwitterHashtags
 import {SearchYoutubeRelatedVideosRestResponse} from '../models/SearchYoutubeRelatedVideosRestResponse';
 
 const baseTwitter = 'http://localhost:8080/api/v0/search/twitter/text=';
-const baseYoutube = 'http://localhost:8080/api/v0/search/twitter/videoId=';
+const baseYoutube = 'http://localhost:8080/api/v0/search/youtube/videoId=';
 
 @Injectable({
     providedIn: 'root'
@@ -35,6 +35,7 @@ export class SearchService {
         this.selectedId.next(id);
         this.http.get<SearchYoutubeRelatedVideosRestResponse>(url)
             .subscribe(result => {
+                console.log(result);
                 this.youtubeData.next(result.content.youtubeIds);
                 this.loading = false;
             });
