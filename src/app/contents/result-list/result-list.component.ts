@@ -8,6 +8,7 @@ import {SearchService} from '../../services/search.service';
 })
 export class ResultListComponent implements OnInit {
   twitterPopularResults;
+  youtubeRelatedResults;
   selectedId;
   isLoading = false;
 
@@ -20,6 +21,11 @@ export class ResultListComponent implements OnInit {
     });
     this.searchService.twitterData.subscribe(data => {
       this.twitterPopularResults = data ? data : [];
+      this.isLoading = false;
+    });
+    this.searchService.youtubeData.subscribe(data => {
+      this.isLoading = false;
+      this.youtubeRelatedResults = data ? data : [];
       this.isLoading = false;
     });
 
