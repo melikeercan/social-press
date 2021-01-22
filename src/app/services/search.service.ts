@@ -36,7 +36,7 @@ export class SearchService {
         this.http.get<SearchYoutubeRelatedVideosRestResponse>(url)
             .subscribe(result => {
                 console.log(result);
-                this.youtubeData.next(result.content.youtubeIds);
+                this.youtubeData.next(result.content.youtubeResults);
                 this.loading = false;
             });
     }
