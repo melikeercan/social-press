@@ -33,4 +33,11 @@ export class YoutubeTrendsComponent implements OnInit {
     }
   }
 
+  selectTrend(trend: string): void {
+    if (trend.charAt(0) === '#') {
+      trend = trend.substr(1);
+    }
+    this.searchService.makeRequest(trend);
+  }
+
 }

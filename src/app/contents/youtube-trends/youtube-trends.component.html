@@ -7,9 +7,9 @@
                 color="primary"
                 selected
                 *ngFor="let trend of trends"
-                (click)="selectTrend(trend.name)"
+                (click)="selectTrend(trend.title)"
         >
-            {{trend.name}}
+            {{trend.title}}
         </mat-chip>
     </mat-chip-list>
 </div>
