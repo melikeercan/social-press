@@ -1,15 +1,24 @@
 <p>youtube-trends works!</p>
 <youtube-player videoId="PRQCAL_RMVo"></youtube-player>
-<div class="mat-chip-list-wrapper">
-    <mat-chip-list aria-orientation="vertical">
-        <mat-chip
-                class="chips"
-                color="primary"
-                selected
-                *ngFor="let trend of trends"
-                (click)="selectTrend(trend.title)"
-        >
-            {{trend.title}}
-        </mat-chip>
-    </mat-chip-list>
-</div>
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Youtube</mat-card-title>
+        <mat-card-subtitle>Popular Videos</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="mat-chip-list-wrapper">
+            <mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
+                <mat-chip
+                        class="chips"
+                        color="primary"
+                        selected
+                        *ngFor="let trend of trends"
+                        (click)="selectTrend(trend.title)"
+                >
+                    {{trend.title}}
+                </mat-chip>
+            </mat-chip-list>
+        </div>
+    </mat-card-content>
+</mat-card>

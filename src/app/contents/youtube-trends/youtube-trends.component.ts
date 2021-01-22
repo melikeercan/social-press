@@ -16,6 +16,7 @@ export class YoutubeTrendsComponent implements OnInit {
 
   ngOnInit(): void {
     this.popularTrendsService.fetchYoutubeTrends().then(result => {
+      console.log(result);
       if (result) {
         this.trends = result;
       } else {
