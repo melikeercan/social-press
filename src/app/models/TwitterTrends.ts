@@ -1,4 +1,4 @@
-export class Trends {
+export class TwitterTrends {
     constructor(
         public name: string,
         public url: string,

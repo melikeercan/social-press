@@ -1,2 +1,15 @@
 <p>youtube-trends works!</p>
 <youtube-player videoId="PRQCAL_RMVo"></youtube-player>
+<div class="mat-chip-list-wrapper">
+    <mat-chip-list aria-orientation="vertical">
+        <mat-chip
+                class="chips"
+                color="primary"
+                selected
+                *ngFor="let trend of trends"
+                (click)="selectTrend(trend.name)"
+        >
+            {{trend.name}}
+        </mat-chip>
+    </mat-chip-list>
+</div>

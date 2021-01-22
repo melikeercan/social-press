@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {YoutubeTrends} from "../../models/YoutubeTrends";
+import {PopularTrendsService} from "../../services/popular-trends.service";
+import {SearchService} from "../../services/search.service";
 
 let apiLoaded = false;
 
@@ -8,9 +11,18 @@ let apiLoaded = false;
   styleUrls: ['./youtube-trends.component.css']
 })
 export class YoutubeTrendsComponent implements OnInit {
-  constructor() { }
+  trends: YoutubeTrends[];
+  constructor(private popularTrendsService: PopularTrendsService, private searchService: SearchService) { }
 
   ngOnInit(): void {
+    this.popularTrendsService.fetchYoutubeTrends().then(result => {
+      if (result) {
+        this.trends = result;
+      } else {
+        this.trends = [];
+      }
+    });
+
     if (!apiLoaded) {
       // This code loads the IFrame Player API code asynchronously, according to the instructions at
       // https://developers.google.com/youtube/iframe_api_reference#Getting_Started

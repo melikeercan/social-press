@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PopularTrendsService} from '../../services/popular-trends.service';
-import {Trends} from '../../models/Trends';
+import {TwitterTrends} from '../../models/TwitterTrends';
 import {SearchService} from '../../services/search.service';
 
 @Component({
@@ -10,11 +10,11 @@ import {SearchService} from '../../services/search.service';
 })
 export class TrendsComponent implements OnInit {
 
-  trends: Trends[];
+  trends: TwitterTrends[];
   constructor(private popularTrendsService: PopularTrendsService, private searchService: SearchService) { }
 
   ngOnInit(): void {
-    this.popularTrendsService.fetchPopularTrends().then(result => {
+    this.popularTrendsService.fetchTwitterTrends().then(result => {
       if (result) {
         this.trends = result;
       } else {
