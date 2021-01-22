@@ -38,7 +38,7 @@ export class YoutubeTrendsComponent implements OnInit {
     if (trend.charAt(0) === '#') {
       trend = trend.substr(1);
     }
-    this.searchService.makeRequest(trend);
+    this.searchService.searchTwitterHashtags(trend);
   }
 
 }

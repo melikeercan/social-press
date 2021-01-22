@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
-import {SearchRestResponse} from '../models/SearchRestResponse';
+import {SearchTwitterHashtagsRestResponse} from '../models/SearchTwitterHashtagsRestResponse';
 
-const base = 'http://localhost:8080/api/v0/search/twitter/text=';
+const baseTwitter = 'http://localhost:8080/api/v0/search/twitter/text=';
+const baseYoutube = 'http://localhost:8080/api/v0/search/twitter/videoId=';
 
 @Injectable({
     providedIn: 'root'
@@ -15,13 +16,19 @@ export class SearchService {
 
     constructor(private http: HttpClient) { }
 
-    makeRequest = (searchText: string) => {
-        const url = base + searchText;
+    searchTwitterHashtags = (searchText: string) => {
+        const url = baseTwitter + searchText;
         this.loading = true;
-        this.http.get<SearchRestResponse>(url)
+        this.http.get<SearchTwitterHashtagsRestResponse>(url)
             .subscribe(result => {
                 this.data.next(result.content.tweetIds);
                 this.loading = false;
             });
+    }
+
+    searchRelatedYoutubeVideos = (id: string) => {
+        const url = baseYoutube + id;
+        this.loading = true;
+
     }
 }

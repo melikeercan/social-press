@@ -1,7 +1,7 @@
 import {RestResponse} from './RestResponse';
 import {TwitterResponse} from './TwitterResponse';
 
-export class SearchRestResponse extends RestResponse{
+export class SearchTwitterHashtagsRestResponse extends RestResponse{
 
     public content: TwitterResponse;
 
