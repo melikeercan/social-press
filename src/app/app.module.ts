@@ -31,7 +31,7 @@ import { SearchBarComponent } from './contents/search-bar/search-bar.component';
 import { ResultListComponent } from './contents/result-list/result-list.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgxTweetModule } from 'ngx-tweet';
-import { TrendsComponent } from './contents/trends/trends.component';
+import { TwitterTrendsComponent } from './contents/twitter-trends/twitter-trends.component';
 import { YoutubeTrendsComponent } from './contents/youtube-trends/youtube-trends.component';
 
 @NgModule({
@@ -44,7 +44,7 @@ import { YoutubeTrendsComponent } from './contents/youtube-trends/youtube-trends
     PopularComponent,
     SearchBarComponent,
     ResultListComponent,
-    TrendsComponent,
+    TwitterTrendsComponent,
     YoutubeTrendsComponent,
   ],
   imports: [
