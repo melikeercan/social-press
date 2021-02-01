@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
 import {SearchTwitterHashtagsRestResponse} from '../models/SearchTwitterHashtagsRestResponse';
-import {SearchYoutubeRelatedVideosRestResponse} from '../models/SearchYoutubeRelatedVideosRestResponse';
+import {YoutubeTrends} from '../models/YoutubeTrends';
+import {SearchYoutubeRelatedVideosRestResponse} from "../models/SearchYoutubeRelatedVideosRestResponse";
 
 const baseTwitter = 'http://localhost:8080/api/v0/search/twitter/text=';
 const baseYoutube = 'http://localhost:8080/api/v0/search/youtube/videoId=';
@@ -36,8 +37,8 @@ export class SearchService {
         this.http.get<SearchYoutubeRelatedVideosRestResponse>(url)
             .subscribe(result => {
                 console.log(result);
-                // this.youtubeData.next(result.content.youtubeResults);
-                // this.loading = false;
+                this.youtubeData.next(result.content.youtubeResults);
+                this.loading = false;
             });
     }
 }

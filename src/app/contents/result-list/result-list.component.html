@@ -1,8 +1,12 @@
 <mat-spinner *ngIf="isLoading"></mat-spinner>
-<div>
-    <youtube-player videoId={{selectedId}}></youtube-player>
-</div>
 <li *ngFor="let id of twitterPopularResults">
     <div>id is: {{id}}</div>
     <ngx-tweet tweetId="{{id}}"></ngx-tweet>
+</li>
+<div>
+    <youtube-player videoId={{selectedId}}></youtube-player>
+</div>
+<li *ngFor="let id of youtubeRelatedResults">
+    <div>id is: {{id.id}}</div>
+    <youtube-player videoId={{id.id}}></youtube-player>
 </li>
