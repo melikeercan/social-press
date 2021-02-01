@@ -11,6 +11,7 @@ export class ResultListComponent implements OnInit {
   youtubeRelatedResults;
   twitterSelected;
   youtubeSelected;
+  instagramSelected;
   selectedId;
   isLoading = false;
 
@@ -26,6 +27,7 @@ export class ResultListComponent implements OnInit {
       this.youtubeRelatedResults = [];
       this.twitterSelected = true;
       this.youtubeSelected = false;
+      this.instagramSelected = false;
       this.isLoading = false;
     });
     this.searchService.youtubeData.subscribe(data => {
@@ -34,11 +36,9 @@ export class ResultListComponent implements OnInit {
       this.twitterPopularResults = [];
       this.twitterSelected = false;
       this.youtubeSelected = true;
+      this.instagramSelected = false;
       this.isLoading = false;
     });
 
   }
-
-
-
 }
